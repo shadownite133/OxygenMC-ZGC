@@ -106,7 +106,7 @@ function launchVanillaServer {
     install_java
     forced_motd
     echo -e "\033[92m● Starting Vanilla Server...\e[0m"
-    java -Xms9G -Xmx9G -XX:+UseZGC -XX:+ZGenerational -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+PerfDisableSharedMem -XX:ReservedCodeCacheSize=512M -XX:MaxMetaspaceSize=512M -XX:MaxDirectMemorySize=1G -XX:SoftMaxHeapSize=8G $STARTUP_ARGUMENT -jar server.jar nogui
+    java -Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=16M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -XX:MaxMetaspaceSize=512M -XX:MaxDirectMemorySize=1G $STARTUP_ARGUMENT -jar server.jar nogui
 }
 
 function launchJavaServer {
@@ -114,7 +114,7 @@ function launchJavaServer {
     install_java
     forced_motd
     echo -e "\033[92m● Starting Minecraft Java Server...\e[0m"
-    java -Xms9G -Xmx9G -XX:+UseZGC -XX:+ZGenerational -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+PerfDisableSharedMem -XX:ReservedCodeCacheSize=512M -XX:MaxMetaspaceSize=512M -XX:MaxDirectMemorySize=1G -XX:SoftMaxHeapSize=8G $STARTUP_ARGUMENT -jar server.jar nogui
+    java -Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=16M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -XX:MaxMetaspaceSize=512M -XX:MaxDirectMemorySize=1G $STARTUP_ARGUMENT -jar server.jar nogui
 }
 
 function launchBedrockVanillaServer {
