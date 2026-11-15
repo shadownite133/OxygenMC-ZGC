@@ -94,7 +94,7 @@ EOF
 
 
 function forced_motd {
-    sed -i "s|^motd=.*|motd=§x§5§4§D§A§F§4§l☲ §x§5§4§C§F§E§F§lᴏ§x§5§4§C§A§E§C§lx§x§5§4§C§4§E§9§lʏ§x§5§4§B§F§E§7§lɢ§x§5§4§B§A§E§4§lᴇ§x§5§4§B§4§E§1§lɴ §x§5§4§A§9§D§C§lᴍ§x§5§4§A§4§D§9§lᴄ §x§5§4§9§9§D§4§l☲ §x§5§4§8§F§C§E§l- §x§5§4§8§4§C§9§l1§x§5§4§7§E§C§6§l2§x§5§4§7§9§C§3§l3§x§5§4§7§4§C§1§lg§x§5§4§6§E§B§E§lg§x§5§4§6§9§B§B§l4§x§5§4§6§3§B§9§l5§x§5§4§5§E§B§6§l6\n§x§5§4§D§A§F§4§lʜ§x§5§4§D§6§F§2§lᴛ§x§5§4§D§1§F§0§lᴛ§x§5§4§C§D§E§D§lᴘ§x§5§4§C§8§E§B§ls§x§5§4§C§4§E§9§l:§x§5§4§B§F§E§7§l/§x§5§4§B§B§E§5§l/§x§5§4§B§7§E§2§lᴏ§x§5§4§B§2§E§0§lx§x§5§4§A§E§D§E§lʏ§x§5§4§A§9§D§C§lɢ§x§5§4§A§5§D§9§lᴇ§x§5§4§A§0§D§7§lɴ§x§5§4§9§C§D§5§lᴍ§x§5§4§9§8§D§3§lᴄ§x§5§4§9§3§D§1§l.§x§5§4§8§F§C§E§l1§x§5§4§8§A§C§C§l2§x§5§4§8§6§C§A§l3§x§5§4§8§1§C§8§lɢ§x§5§4§7§D§C§6§lɢ§x§5§4§7§9§C§3§l4§x§5§4§7§4§C§1§l5§x§5§4§7§0§B§F§l6§x§5§4§6§B§B§D§l.§x§5§4§6§7§B§A§lᴄ§x§5§4§6§2§B§8§lᴏ§x§5§4§5§E§B§6§lᴍ|g" server.properties
+    sed -i "s|^motd=.*|motd=OxygenMC ZGC Edition|g" server.properties
 }
 
 ####################################
@@ -106,7 +106,7 @@ function launchVanillaServer {
     install_java
     forced_motd
     echo -e "\033[92m● Starting Vanilla Server...\e[0m"
-    java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true $STARTUP_ARGUMENT -jar server.jar nogui
+    java -Xms12G -Xmx12G -XX:+UseZGC -XX:+ZGenerational -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+PerfDisableSharedMem -XX:ReservedCodeCacheSize=512M -XX:SoftMaxHeapSize=11G $STARTUP_ARGUMENT -jar server.jar nogui
 }
 
 function launchJavaServer {
@@ -114,7 +114,7 @@ function launchJavaServer {
     install_java
     forced_motd
     echo -e "\033[92m● Starting Minecraft Java Server...\e[0m"
-    java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true $STARTUP_ARGUMENT -jar server.jar nogui
+    java -Xms12G -Xmx12G -XX:+UseZGC -XX:+ZGenerational -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+PerfDisableSharedMem -XX:ReservedCodeCacheSize=512M -XX:SoftMaxHeapSize=11G $STARTUP_ARGUMENT -jar server.jar nogui
 }
 
 function launchBedrockVanillaServer {

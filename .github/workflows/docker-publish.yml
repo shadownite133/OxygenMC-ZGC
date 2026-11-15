@@ -7,7 +7,7 @@ on:
 # Defines two custom environment variables for the workflow. These are used for the Container registry domain and a name for the Docker image that this workflow builds.
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: 123gg456atonix/OxygenMC
+  IMAGE_NAME: shadownite133/OxygenMC-ZGC
 # There is a single job in this workflow. It's configured to run on the latest available version of Ubuntu.
 jobs:
   build-and-push-image:
@@ -18,7 +18,7 @@ jobs:
       packages: write
       attestations: write
       id-token: write
-      # 
+      #
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -46,4 +46,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-      
