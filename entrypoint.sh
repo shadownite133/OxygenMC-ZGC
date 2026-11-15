@@ -106,7 +106,7 @@ function launchVanillaServer {
     install_java
     forced_motd
     echo -e "\033[92m● Starting Vanilla Server...\e[0m"
-    java -Xms8G -Xmx8G -XX:+UseZGC -XX:+ZGenerational -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+PerfDisableSharedMem -XX:ReservedCodeCacheSize=512M -XX:SoftMaxHeapSize=9G $STARTUP_ARGUMENT -jar server.jar nogui
+    java -Xms128M -Xmx12G -XX:+UseZGC -XX:+ZGenerational -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+PerfDisableSharedMem -XX:ReservedCodeCacheSize=512M -XX:SoftMaxHeapSize=11G $STARTUP_ARGUMENT -jar server.jar nogui
 }
 
 function launchJavaServer {
@@ -114,7 +114,7 @@ function launchJavaServer {
     install_java
     forced_motd
     echo -e "\033[92m● Starting Minecraft Java Server...\e[0m"
-    java -Xms8G -Xmx8G -XX:+UseZGC -XX:+ZGenerational -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+PerfDisableSharedMem -XX:ReservedCodeCacheSize=512M -XX:SoftMaxHeapSize=6G $STARTUP_ARGUMENT -jar server.jar nogui
+    java -Xms128M -Xmx12G -XX:+UseZGC -XX:+ZGenerational -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+PerfDisableSharedMem -XX:ReservedCodeCacheSize=512M -XX:SoftMaxHeapSize=11G $STARTUP_ARGUMENT -jar server.jar nogui
 }
 
 function launchBedrockVanillaServer {
