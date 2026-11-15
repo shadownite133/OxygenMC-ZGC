@@ -6,11 +6,11 @@
     },
     "exported_at": "2025-09-11T00:00:49+05:30",
     "name": "OxygenMC",
-    "author": "admin@123gg456.com",
-    "description": "OxygenMC multi-egg for hosting providers by 123gg456_",
+    "author": "shadow@limbo-nodes.com",
+    "description": "OxygenMC multi-egg for hosting providers by 123gg456_. Switched to ZGC by Shadownite133",
     "features": null,
     "docker_images": {
-        "Oxygen MC": "ghcr.io\/123gg456atonix\/oxygenmc:main"
+        "Oxygen MC": "ghcr.io\/shadownite133\/OxygenMC-ZGC:main"
     },
     "file_denylist": [],
     "startup": ".\/oxygenmc.sh",
