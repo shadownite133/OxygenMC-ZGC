@@ -1,3 +1,4 @@
+> ZGC has been removed from this fork, and it merely tweaks some memory and gc options now, name has been kept to prevent the need to modify docker image settings
 <br/><p align="center">
   <picture>
     <img alt="oxygenmc" src="https://github.com/123gg456atonix/OxygenMC/blob/main/oxygenmc.png?raw=true" height="100">
